@@ -12,13 +12,47 @@
 
     <style>
       body {
-        background-color: #e9ebee;
-        font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco",
-          "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-        font-size: 16px;
-        margin: 0 auto;
-        max-width: 800px;
-      }
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="date"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #1d0bc0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+}
+
+input[type="submit"]:hover {
+    background-color: #1d0bc0;
+}
+input:invalid + .icon-ok {
+  display: none;
+}
+input:valid + .icon-ok {
+  display: inline-block;
+}
     </style>
 
     <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
@@ -26,9 +60,31 @@
     <!--<script src="js/main.js"></script>-->
   </head>
   <body>
-    <h1>tp2</h1>
+    <h1>TP 2</h1>
+    <form action="action.html" method="get">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" minlength="2" maxlength="20" required>
+        <span class="icon-ok" style="color: green">✔</span><br><br>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom"  minlength="2" maxlength="20" required>
+        <span class="icon-ok" style="color:green">✔</span><br><br>
+
+        <label for="date_naissance">Date de naissance :</label>
+        <input type="date" id="date_naissance" name="date_naissance" required>
+        <span class="icon-ok" style="color:green">✔</span><br><br>
+
+        <label for="adresse">Adresse :</label>
+        <input type="text" id="adresse" name="adresse" minlength="5" maxlength="50" required>
+        <span class="icon-ok" style="color:green">✔</span><br><br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" minlength="5" maxlength="50" required>
+        <span class="icon-ok" style="color:green">✔</span><br><br>
+
+        <input type="submit" value="Envoyer">
+    </form>
+    <script src="action.js"></script>
     <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <img src="../galilee.png" alt="Logo Galilee" />
   </body>
 </html>
